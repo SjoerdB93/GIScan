@@ -336,7 +336,7 @@ def find_peak_in_range(self, position, xdata, ydata):
     chosen_Yrange = ydata[chosen_index - check_range:chosen_index + check_range]
     chosen_Xrange = xdata[chosen_index - check_range:chosen_index + check_range]
     try:
-        peakindex = find_peaks(np.log(self.chosen_Yrange), prominence=1)[0]
+        peakindex = find_peaks(np.log(chosen_Yrange), prominence=1)[0][0]
         found_peak = True
     except IndexError:
         print("Could not find a peak at this position")
